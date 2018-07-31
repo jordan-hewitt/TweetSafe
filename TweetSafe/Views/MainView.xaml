@@ -18,7 +18,7 @@
             VerticalOptions = "Center" />
             
         <Label 
-            Text="Welcome to TweetSafe!" 
+            Text="Welcome to TweetSafe, dude!" 
             HorizontalOptions="Center" 
             VerticalOptions="Center"
             TextColor = " { StaticResource TwitterBlue }" />
