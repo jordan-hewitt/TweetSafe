@@ -1,8 +1,10 @@
-using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using TweetSafe.Helpers;
+using System.Threading.Tasks;
+
+using TweetSafe.Services;
+using TweetSafe.ViewModels;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace TweetSafe
@@ -13,12 +15,27 @@ namespace TweetSafe
         {
             InitializeComponent();
 
-            MainPage = new MainView();
+			InitApp();
         }
 
-        protected override void OnStart()
+        private void InitApp()
         {
-            // Handle when your app starts
+            ViewModelLocator.RegisterDependencies();
+            var navigationService = ViewModelLocator.Resolve<INavigationService>();
+        }
+
+        private async Task InitNavigation()
+        {
+            var navigationService = ViewModelLocator.Resolve<INavigationService>();
+
+            await navigationService.InitializeAsync();
+        }
+
+        protected override async void OnStart()
+        {
+            base.OnStart();
+                                     
+            await InitNavigation();
         }
 
         protected override void OnSleep()

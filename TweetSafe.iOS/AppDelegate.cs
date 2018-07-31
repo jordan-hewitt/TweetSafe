@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Foundation;
+﻿
 using UIKit;
+using Foundation;
+
+using TweetSafe.Helpers;
+
 
 namespace TweetSafe.iOS
 {
@@ -25,6 +25,10 @@ namespace TweetSafe.iOS
             Xamarin.Calabash.Start();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+
+            Constants.ScreenWidth = (double)UIScreen.MainScreen.Bounds.Width;
+            Constants.ScreenHeight = (double)UIScreen.MainScreen.Bounds.Height;
+            Constants.ScaleFactor = (double)UIScreen.MainScreen.Scale;
 
             return base.FinishedLaunching(app, options);
         }

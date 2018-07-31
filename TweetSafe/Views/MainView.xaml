@@ -3,26 +3,34 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:TweetSafe"
+             xmlns:helpers="clr-namespace:TweetSafe.Helpers"
              xmlns:controls="clr-namespace:TweetSafe.Controls"
-             xmlns:helpers="clr-namespace:TweetSafe.Helpers"   
+             xmlns:viewModels="clr-namespace:TweetSafe.ViewModels"
+             x:Class="TweetSafe.Views.MainView"
+             BackgroundColor = "White">
 
-             x:Class="TweetSafe.MainView">
-    
+    <ContentPage.BindingContext>
+        <viewModels:MainViewModel /> 
+    </ContentPage.BindingContext>
+          
     <StackLayout 
         BackgroundColor = "White"
-        VerticalOptions = "Center"> 
+        VerticalOptions = "Start"
+        Spacing = "-20"
+        Padding = "0, 40" > 
                  
         <Image 
             Source= "twitterIcon.png"
-            HeightRequest = "{ Binding ImageWidth }"
-            VerticalOptions = "Center" />
+            WidthRequest = "200"
+            VerticalOptions = "Center"
+        />
             
         <Label 
-            Text="Welcome to TweetSafe, dude!" 
+            Text="Welcome to TweetSafe!" 
             HorizontalOptions="Center" 
             VerticalOptions="Center"
             TextColor = " { StaticResource TwitterBlue }" />
         
     </StackLayout>
-    
+
 </ContentPage>
