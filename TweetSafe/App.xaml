@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="TweetSafe.App"
+             xmlns:helpers="clr-namespace:TweetSafe.Helpers" >  
+    <Application.Resources>
+        
+      <!-- Colors -->
+      <Color x:Key="TwitterBlue">#2AA3EF</Color>      
+              
+    </Application.Resources>
+</Application>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:TweetSafe"
+             xmlns:controls="clr-namespace:TweetSafe.Controls"
+             xmlns:helpers="clr-namespace:TweetSafe.Helpers"   
+
+             x:Class="TweetSafe.MainView">
+    
+    <StackLayout 
+        BackgroundColor = "White"
+        VerticalOptions = "Center"> 
+                 
+        <Image 
+            Source= "twitterIcon.png"
+            HeightRequest = "{ Binding ImageWidth }"
+            VerticalOptions = "Center" />
+            
+        <Label 
+            Text="Welcome to TweetSafe!" 
+            HorizontalOptions="Center" 
+            VerticalOptions="Center"
+            TextColor = " { StaticResource TwitterBlue }" />
+        
+    </StackLayout>
+    
+</ContentPage>
